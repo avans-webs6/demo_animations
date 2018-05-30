@@ -19,9 +19,22 @@
   No valid id in url!
 </div> -->
 
-<div *ngIf="(blog | async) as b">
-  {{b.name}}
-  {{b.author}}
-  <button (click)="b.bling()">Bling bling</button>
+<div class="navbar navbar-dark bg-dark" *ngIf="(blog | async) as b">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/blogs">Blog {{ b.name }}</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <button class="btn btn-default btn-sm" routerLink="/blogs">Back to list</button>
+      </li>
+    </ul>
+  </div>
 </div>
 
+
+<div  class="text-center md-padding">
+  <h4>You bought the blog {{b.name}} from author
+    <b>{{b.author}}</b>
+  </h4>
+</div>

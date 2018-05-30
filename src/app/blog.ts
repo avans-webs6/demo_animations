@@ -9,8 +9,10 @@ export class Blog
     public date: Date = new Date();
     public state = 'normal';
 
-    constructor(snapshot)
+    constructor(snapshot = null)
     {
+        if(!snapshot) return;
+
         this.key = snapshot.key;
         var data = snapshot.payload.val();
 

@@ -1,3 +1,16 @@
+<div class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/blogs">Create a new blog</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">
+        <button class="btn btn-danger btn-sm" routerLink="/blogs">Cancel</button>
+      </li>
+    </ul>
+  </div>
+</div>
+
 <!-- Dit formulier gaan we volgende week pimpen! -->
 <!-- probeer eens een blog toe te voegen als je niet bent ingelogd -->
 <form (ngSubmit)="onSubmit(model)" #blogForm="ngForm">

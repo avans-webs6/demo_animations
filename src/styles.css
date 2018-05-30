@@ -1,7 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
 
 body{
     margin:30px;
-    background-color: #3098dc;
+    background-color: #ADD8E6;
+}
+
+.navbar-nav{
+    flex-direction: row;
+}
+
+.container-fluid{
+    justify-content: left;
+}
+
+.pull-right{
+    float:right;
 }

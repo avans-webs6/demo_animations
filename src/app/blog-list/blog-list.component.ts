@@ -60,6 +60,4 @@ export class BlogListComponent implements OnInit {
         this.blogs.push(nb);
     })
   };
-
-}
 }

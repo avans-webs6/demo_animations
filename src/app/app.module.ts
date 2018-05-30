@@ -27,6 +27,7 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'blogs', pathMatch: 'full' },
   { path: 'users', component: UserListComponent},
   { path: 'blogs', component: BlogListComponent},
+  { path: 'blogs/add', component: BlogAddComponent},
   { path: 'blogs/:id', component: BlogDetailComponent },
 ];
 
