@@ -1,0 +1,35 @@
+<div class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/blogs">Blogs</a>
+    </div>
+  </div>
+</div>
+
+{{blogs | json  }}
+
+<ul class="blogs">
+  <li *ngFor="let b of blogs" [@blogState]="b.state">
+    <div class="card front">
+      <img class="card-img-top" src="https://blog.evernote.com/in/files/2016/05/Travel-Blog.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{b.name}}</h5>
+        <p class="card-date">{{b.date |  date:'fullDate'}}</p>
+        <a class="btn btn-primary" (click)="b.state = 'flipped'">Show more</a>
+      </div>
+    </div>
+    <div class="card back">
+      <div class="card-body text-center">
+
+          <a href="#" class="btn btn-success" routerLink="/blogs/{{b.key}}">Buy Article</a>
+          <a class="btn btn-outline-danger" (click)="delete(b)">Delete article</a>
+          <a class="" (click)="b.state = 'normal'">Back</a>
+
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div class="text-center" *ngIf="!(blogs)">
+
+</div>

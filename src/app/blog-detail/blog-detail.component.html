@@ -1,0 +1,27 @@
+<!-- Alleen details laten zien als de 'sleutel' aanwezig is. -->
+<!-- <div *ngIf="blogForm">
+  <h2>Blog Detail</h2>
+  <form [formGroup]="blogForm">
+    <div class="form-group">
+      <label class="center-block">Name:
+        <input class="form-control" formControlName="name">
+      </label>
+    </div>
+    <div class="form-group">
+      <label class="center-block">Author:
+        <input class="form-control" formControlName="author">
+      </label>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="!key | async">
+  No valid id in url!
+</div> -->
+
+<div *ngIf="(blog | async) as b">
+  {{b.name}}
+  {{b.author}}
+  <button (click)="b.bling()">Bling bling</button>
+</div>
+

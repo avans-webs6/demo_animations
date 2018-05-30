@@ -1,0 +1,42 @@
+<div class="container">
+
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" routerLink="/">Bloggy</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a routerLink="/">Blogs</a>
+                    </li>
+                    <li>
+                        <a routerLink="/myBlogs">My blogs</a>
+                    </li>
+                    <li>
+                        <a routerLink="/newBlog">Create blogs</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right" *ngIf="afAuth.authState | async as user; else showLogin">
+                    <li class="navbar-text">
+                        <span>Hello {{ user.displayName }}!</span>
+                    </li>
+                    <li>
+                        <a (click)="logout()">
+                            <span class="sr-only">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <a (click)="login()">
+                        <span class="sr-only">Login</span>
+                    </a>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+        <!--/.container-fluid -->
+    </nav>
+
+    <router-outlet></router-outlet>
+</div>
