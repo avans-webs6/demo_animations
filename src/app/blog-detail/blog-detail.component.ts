@@ -22,7 +22,7 @@ export class BlogDetailComponent implements OnInit {
   //properties
   public key: Observable<string>;
   private blog: Observable<Blog> = null; 
-  //public blogForm: FormGroup;
+  public blogForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -33,18 +33,10 @@ export class BlogDetailComponent implements OnInit {
     this.key = this.route.params.map(p => p.id); //<--
     this.key.subscribe(key => {
         this.blog = this.blogProvider.GetBlog(key); 
-        this.blogForm = fb.group(this.blog);
+        this.blogForm = this.fb.group(this.blog);
         //etc
     })
   }
-
-
-
-
-
-
-
-
 
   // public updateForm(key) {
 
